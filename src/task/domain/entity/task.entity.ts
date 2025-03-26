@@ -22,8 +22,6 @@ export class Task {
       createdAt: undefined,
       updatedAt: undefined,
     };
-
-    Object.freeze(this.props);
   }
 
   public validate(props: TaskProps) {
@@ -35,6 +33,17 @@ export class Task {
       throw new Error(
         'O título deve ter entre 3 e 100 caracteres e não pode estar vazio.',
       );
+    }
+  }
+
+  public updateTask(data: Partial<TaskProps>) {
+    if (data.title) {
+      this.titleValidate(data.title);
+      this.props.title = data.title;
+    }
+
+    if (data.description) {
+      this.props.description = data.description;
     }
   }
 
