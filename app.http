@@ -1,0 +1,120 @@
+###
+post http://localhost:3001/endereco
+Content-Type: application/json
+
+{
+    "name": "cha preto",
+    "description": "descricao 1"
+}
+###
+
+post http://localhost:3001/credencial
+Content-Type: application/json
+
+{
+    "username": "teste",
+    "email": "teste@gmail.com",
+    "phone": "927312059",
+    "password": "12343467"
+}
+
+### Criar Endereço
+POST http://localhost:3001/endereco
+Content-Type: application/json
+
+{
+  "street": "Rua Amilcar josimar",
+  "number": "123",
+  "complement": "Apartamento 2",
+  "neighborhood": "Bairro Azul",
+  "municipality": "Luanda"
+}
+
+###
+
+GET http://localhost:3001/endereco
+
+
+###
+
+POST http://localhost:3001/casas
+Content-Type: application/json
+
+{
+  "descricao": "Casa  pequena",
+  "endereco": {
+     "street": "Josimar",
+  "number": "123434",
+  "complement": "Apartamento 5",
+  "neighborhood": "Bairro verde",
+  "municipality": "Malanje"
+  },
+  "valorAluguel": 150000,
+  "status": "DISPONIVEL"
+}
+
+###
+
+POST http://localhost:3001/casas
+Content-Type: application/json
+
+{
+  "descricao": "Casa  pequena",
+  "endereco": {
+      "street": "Rua Amilcar Cabral",
+      "number": "123",
+      "complement": "Apartamento 2",
+      "neighborhood": "Bairro Azul",
+      "municipality": "Luanda"
+  },
+  "valorAluguel": 150000,
+  "status": "DISPONIVEL"
+}
+
+
+
+###
+
+POST http://localhost:3001/casas
+Content-Type: application/json
+
+{
+  "descricao": "Casa no meio",
+  "endereco": "ca825c06-670e-4a08-9bf3-c08d0938a462",
+  "valorAluguel": 150000,
+  "status": "DISPONIVEL"
+}
+
+
+###
+POST http://localhost:3001/inquilino
+Content-Type: application/json
+
+{
+  "name": "João",
+  "phone": "999999989",
+  "email": "joaa@email.com",
+  "bilhete": "123456789LA943",
+  "dataNascimento": "2000-01-01"
+}
+
+###
+
+GET http://localhost:3001/inquilino
+
+###
+POST http://localhost:3001/empresa
+Content-Type: application/json
+
+{
+  "name": "JALTE",
+  "endereco": {
+     "street": "gonga",
+  "number": "123434",
+  "complement": "Apartamento 5",
+  "neighborhood": "Bairro verde",
+  "municipality": "Malanje"
+  },
+  "phone": "927398089",
+  "email": "josi@gmail.com"
+}
