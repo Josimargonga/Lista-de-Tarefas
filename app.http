@@ -3,8 +3,8 @@ post http://localhost:3001/task
 Content-Type: application/json
 
 {
-  "title": "Estudar Prisma",
-  "description": "Aprofundar meus conhecimentos em Prisma"
+  "title": "estudar JavaScript",
+  "description": "Aprofundar meus conhecimentos em "
 }
 
 ###
@@ -36,11 +36,11 @@ Content-Type: application/json
 }
 
 ###
-PATCH http://localhost:3001/task/f8d935bc-ca5b-4fb0-94cf-a531d89ac0b4
+PATCH http://localhost:3001/task/bf8698e9-d875-4c43-ae34-4e0ab1710c47
 Content-Type: application/json
 
 {
-  "description": "estudar prisma e aprofundar os conheciemtnos"
+  "description": "estudar js para aprofundar os conhecimento"
 }
 
 ###
@@ -48,7 +48,15 @@ PATCH http://localhost:3001/task/done/f8d935bc-ca5b-4fb0-94cf-a531d89ac0b4
 Content-Type: application/json
 ###
 
-PATCH http://localhost:3001/task/f8d935bc-ca5b-4fb0-94cf-a531d89ac0b4/done
+PATCH http://localhost:3001/task/4d9a1983-525d-417d-9689-2876d592b297/done
+
+###
+
+PATCH http://localhost:3001/task/ec61bdd0-0fdc-4e62-bc9d-27aa3237a67a/todo
+
+###
+
+DELETE http://localhost:3001/task/ec61bdd0-0fdc-4e62-bc9d-27aa3237a67a
 
 
 

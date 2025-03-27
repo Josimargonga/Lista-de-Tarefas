@@ -42,7 +42,7 @@ export class TaskService {
     });
 
     if (!existingTask) {
-      throw new Error('Tarefa não encontrada');
+      throw new Error('Task not found');
     }
 
     const task = new Task(existingTask);
@@ -64,7 +64,7 @@ export class TaskService {
     });
 
     if (!existingTask) {
-      throw new Error('Tarefa não encontrada');
+      throw new Error('Task not found');
     }
 
     return this.prisma.task.update({
@@ -73,5 +73,34 @@ export class TaskService {
         status: TaskStatus.DONE,
       },
     });
+  }
+
+  async markTodo(id: string): Promise<OutputTaskDto | null> {
+    const existingTask = await this.prisma.task.findUnique({
+      where: { id },
+    });
+
+    if (!existingTask) {
+      throw new Error('Task not found');
+    }
+
+    return this.prisma.task.update({
+      where: { id },
+      data: {
+        status: TaskStatus.TODO,
+      },
+    });
+  }
+
+  async delete(id: string): Promise<void> {
+    const existingTask = await this.prisma.task.findUnique({
+      where: { id },
+    });
+
+    if (!existingTask) {
+      throw new Error('Task not found');
+    }
+
+    await this.prisma.task.delete({ where: { id } });
   }
 }

@@ -69,12 +69,4 @@ export class Task {
   get updatedAt(): Date | undefined {
     return this.updatedAt;
   }
-
-  public concluirTarefa(): void {
-    if (this.props.status === 'DONE') {
-      throw new Error('A tarefa já está concluída.');
-    }
-
-    this.props = { ...this.props, status: 'DONE' };
-  }
 }
